@@ -1,0 +1,24 @@
+resources:
+  requests:
+    memory: "768Mi"
+    cpu: "1"
+  limits:
+    memory: "768Mi"
+    cpu: "1"
+priorityClassName: "high-priority"
+externalTrafficPolicy: Local
+rbac:
+  enabled: true
+ssl:
+  enabled: true
+acme:
+  enabled: true
+  email: "ops@sample.com"
+  challengeType: "dns-01"
+  dnsProvider:
+    name: azure
+    provider: "azure"
+  domains:
+    enabled: true
+    domainsList:
+      - main: "*.k8s.sample.com"

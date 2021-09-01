@@ -1,0 +1,10 @@
+deployments:
+  - name: overprovisioner
+    replicaCount: 1
+    nodeSelector: {}
+    resources:
+      requests:
+        cpu: "2"
+        memory: "8Gi"
+    tolerations: []
+    affinity: {}      

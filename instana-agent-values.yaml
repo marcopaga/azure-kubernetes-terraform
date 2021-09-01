@@ -1,0 +1,48 @@
+com.instana.plugin.host:
+  tags:
+    - 'terraform'
+    - 'sample'
+    - '${zone_name}'
+
+com.instana.plugin.generic.hardware:
+  enabled: true
+  availability-zone: "${zone_name}"
+
+com.instana.plugin.netcore:
+  sensor:
+    enabled: true
+  tracing:
+    enabled: true
+
+com.instana.plugin.python:
+  autodiscovery:
+    enabled: true
+    whitelist:
+      - 'gunicorn'
+      - 'uwsgi'
+    blacklist:
+      - 'pipenv'
+      - 'runserver'
+      - 'setup.py'
+      - 'ipython'
+      - 'terminator'
+      - 'mintupdate'
+
+com.instana.plugin.javatrace:
+  instrumentation:
+    sdk:
+      packages:
+        - 'com.example.*'
+
+com.instana.plugin.redis:
+  password: 'redisPassword'
+  monitor:
+    - key: 'queue-to-monitor'
+      type: 'list-length'
+
+
+com.instana.plugin.rabbitmq:
+  user: 'rabbitmq'
+  password: 'password'
+  monitorQueues:
+    - queue: 'queue-to-monitor'

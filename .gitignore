@@ -1,0 +1,4 @@
+/.terraform/
+/crash.log
+/azurek8s
+terraform.tfstate*
