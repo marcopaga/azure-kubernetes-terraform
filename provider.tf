@@ -19,7 +19,7 @@ provider "kubernetes" {
 
 provider "helm" {
   debug           = true
-  version         = "~> 0.9"
+  version         = "~> 0.10"
   install_tiller  = true
   service_account = "tiller"
 
