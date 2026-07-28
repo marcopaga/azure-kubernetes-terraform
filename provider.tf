@@ -3,7 +3,7 @@ provider "azuread" {
 }
 
 provider "azurerm" {
-  version = "~>1.5"
+  version = "~> 5.0"
 }
 
 provider "kubernetes" {
